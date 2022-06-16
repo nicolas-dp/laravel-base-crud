@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 Route::get('/comics', 'CardController@index')->name('comics');
 
+Route::get('/comics/{id}', 'CardController@show')->name('cards.show');
+
