@@ -22,7 +22,7 @@
                         <a class="nav-link {{ Route::currentRouteName() === 'characters' ? 'active' : '' }}" aria-current="page" href="#">characters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}" aria-current="page" href="#">comics</a>
+                        <a class="nav-link {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}" aria-current="page" href="comics">comics</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link {{ Route::currentRouteName() === 'shop' ? 'active' : '' }}" aria-current="page" href="#">shop</a>
