@@ -5,8 +5,8 @@
     <div class="row">
         @forelse($cards as $card)
         <div class="col">
+        <a href="{{route('cards.show', $card->id)}}">
             <div class="card">
-                <a href="{{route('cards.show', $card->id)}}">
                     <img src="{{$card->thumb}}" alt="{{$card->series}}">
                     <div class="card-body">
                         <h5>{{$card->series}}</h5>

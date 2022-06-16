@@ -25,7 +25,7 @@ class CardController extends Controller
      */
     public function create()
     {
-        //
+        return view('cards.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Card::create($data);
+
+        // pattern POST-REDIRECT-GET
+        return redirect()->route('cards.index');
     }
 
     /**

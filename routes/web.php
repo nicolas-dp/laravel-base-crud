@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/comics', 'CardController@index')->name('comics');
-
-Route::get('/comics/{id}', 'CardController@show')->name('cards.show');
+Route::get('/comics/create', 'CardController@create')->name('cards.create');
+Route::post('/comics', 'CardController@store')->name('cards.store');
+Route::get('/comics/{card}', 'CardController@show')->name('cards.show');
 
