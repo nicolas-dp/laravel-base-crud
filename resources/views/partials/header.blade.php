@@ -1,16 +1,36 @@
-<div class="content">
-    <div class="title m-b-md">
-        Laravel
+<header>
+    <div class="bg-primary text-white">
+        <div class="powered-visa container">
+            <small>POWERED VISA</small>
+            <small>ADDICTIONAL DC SITES</small>
+        </div>
     </div>
+    <nav>
+        <div class="container">
 
-    <div class="links">
-        <a href="https://laravel.com/docs">Docs</a>
-        <a href="https://laracasts.com">Laracasts</a>
-        <a href="https://laravel-news.com">News</a>
-        <a href="https://blog.laravel.com">Blog</a>
-        <a href="https://nova.laravel.com">Nova</a>
-        <a href="https://forge.laravel.com">Forge</a>
-        <a href="https://vapor.laravel.com">Vapor</a>
-        <a href="https://github.com/laravel/laravel">GitHub</a>
-    </div>
-</div>
+
+
+
+            <ul class="nav">
+                <li>
+                    <a href="/">
+                        <img height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/2048px-DC_Comics_logo.svg.png" alt="...">
+                    </a>
+                </li>
+                <ul class="nav text-uppercase">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() === 'characters' ? 'active' : '' }}" aria-current="page" href="#">characters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() === 'comics' ? 'active' : '' }}" aria-current="page" href="#">comics</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link {{ Route::currentRouteName() === 'shop' ? 'active' : '' }}" aria-current="page" href="#">shop</a>
+                    </li>
+                </ul>
+
+            </ul>
+        </div>
+
+    </nav>
+</header>
