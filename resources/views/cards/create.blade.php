@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="container">
+<div class="container w-50 mb-5">
     <h1> Create a new Card</h1>
     <!-- Puntare il form alla rotta POST store -->
     <form action="{{route('cards.store')}}" method="post">
