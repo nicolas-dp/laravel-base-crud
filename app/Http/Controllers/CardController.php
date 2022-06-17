@@ -62,7 +62,7 @@ class CardController extends Controller
      */
     public function show(Card $card)
     {
-        return view('cards.show' ,compact('card'));
+        return view('cards.show', compact('card'));
     }
 
     /**
@@ -73,7 +73,7 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-        //
+     return view('cards.edit', compact('card'));
     }
 
     /**
@@ -85,7 +85,22 @@ class CardController extends Controller
      */
     public function update(Request $request, Card $card)
     {
-        //
+        //Validare dati
+        $validatedData = $request->validate([
+            'title' => 'required|max:120',
+            'description' => 'nullable',
+            'thumb' => 'required',
+            'price' => 'nullable',
+            'series' => 'nullable',
+            'sale_date' => 'nullable',
+            'type' => 'nullable',
+            
+        ]);
+        //Salviamo dati nel DB dopo che sono stati validati
+        $card->update($validatedData);
+
+        // pattern POST-REDIRECT-GET
+        return redirect()->route('cards.index', $card->id);
     }
 
     /**
@@ -96,6 +111,7 @@ class CardController extends Controller
      */
     public function destroy(Card $card)
     {
-        //
+        $card->delete();
+        return redirect()->route('cards.index');
     }
 }
