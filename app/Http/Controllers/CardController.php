@@ -36,8 +36,20 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Card::create($data);
+        //Validare dati
+        $validatedData = $request->validate([
+            'title' => 'required|max:120',
+            'description' => 'nullable',
+            'thumb' => 'required',
+            'price' => 'nullable',
+            'series' => 'nullable',
+            'sale_date' => 'nullable',
+            'type' => 'nullable',
+            
+        ]);
+        //Salviamo dati nel DB
+        //$data = $request->all();
+        Card::create($validatedData);
 
         // pattern POST-REDIRECT-GET
         return redirect()->route('cards.index');
