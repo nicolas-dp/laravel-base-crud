@@ -54,13 +54,44 @@
                             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
                         </svg>
                     </a> -->
-                    <form method="post" action="{{route('cards.destroy', $card->id)}}" class="has-confirm" data-message="Delete this Thing?">
+
+                    <!-- <form method="post" action="{{route('cards.destroy', $card->id)}}" class="has-confirm" data-message="Delete this Thing?">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">
                             ELIMINA
                         </button>
-                    </form>
+                    </form> -->
+
+                    <!-- *******************************  BONUS ************************************************  -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        ELIMINA
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form action="{{route('cards.destroy', $card->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Elimina riga {{$card->id}} - {{$card->title}}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sei sicuro di voler eliminare il record selezionato?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">Elimina</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                 </td>
             </tr>
             @endforeach
