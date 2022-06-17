@@ -47,8 +47,7 @@ class CardController extends Controller
             'type' => 'nullable',
             
         ]);
-        //Salviamo dati nel DB
-        //$data = $request->all();
+        //Salviamo dati nel DB dopo che sono stati validati
         Card::create($validatedData);
 
         // pattern POST-REDIRECT-GET
