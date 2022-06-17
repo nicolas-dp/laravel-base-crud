@@ -5,7 +5,9 @@
 
 <div class="container w-50 mb-5">
     <h1> Create a new Card</h1>
-    @include('partials.error')
+
+    <!-- Non è necessario aggiungere partial.error poichè abbiamo il controllo dell'errore su ogni input -->
+    <!--   @include('partials.error') -->
     <!-- Puntare il form alla rotta POST store -->
     <form action="{{route('cards.store')}}" method="post">
         @csrf
@@ -25,15 +27,15 @@
             <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="https://myimage.png" aria-describedby="thumbHelper" value="{{old('thumb')}}">
             <small id="thumbHelper" class="text-muted">Type the thumb image path here</small>
             <!-- Error validation -->
-            @error('title')
+            @error('thumb')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}">
+            <input type="number" min="0" max="10000" step="1" name="price" id="price" class="form-control @error('price') is-invalid @enderror" value="{{old('price')}}">
             <!-- Error validation -->
-            @error('title')
+            @error('price')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -42,7 +44,7 @@
             <input type="text" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="Batman: Three Jokers" aria-describedby="seriesHelper" value="{{old('series')}}">
             <small id="seriesHelper" class="text-muted">Enter the title of the comic here</small>
             <!-- Error validation -->
-            @error('title')
+            @error('series')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -50,7 +52,7 @@
             <label for="sale_date">Data di vendita</label>
             <input type="text" name="sale_date" id="sale_date" placeholder="2020-08-25" class="form-control  @error('sale_date') is-invalid @enderror" value="{{old('sale_date')}}">
             <!-- Error validation -->
-            @error('title')
+            @error('sale_date')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -59,7 +61,7 @@
             <input type="text" name="type" id="type" aria-describedby="typeHelper" class="form-control @error('type') is-invalid @enderror" value="{{old('type')}}">
             <small id="typeHelper" class="text-muted">Enter the name of the edition here</small>
             <!-- Error validation -->
-            @error('title')
+            @error('type')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -69,7 +71,7 @@
             {{old('description')}}
             </textarea>
             <!-- Error validation -->
-            @error('title')
+            @error('description')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

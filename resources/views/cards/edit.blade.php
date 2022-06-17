@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="text" name="price" id="price" class="form-control @error('price') is-invalid @enderror" value="{{$card->price}}">
+            <input type="number" min="0" max="10000" step="1" name="price" id="price" class="form-control @error('price') is-invalid @enderror" value="{{$card->price}}">
             <!-- Error validation -->
             @error('title')
             <div class="alert alert-danger">{{ $message }}</div>

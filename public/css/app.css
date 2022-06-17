@@ -12202,6 +12202,20 @@ fieldset:disabled .btn {
   width: 13%;
 }
 
+/* ACTION TABLE */
+
+.action_table {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 !important;
+}
+
+.action_table a {
+  margin-bottom: 0.5rem;
+}
+
 /* Footer end */
 
 .footer_end_menu {

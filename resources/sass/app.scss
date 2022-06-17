@@ -9,6 +9,7 @@ $dc-white: white;
 $dc-primary: #0282F9;
 
 
+
 /* MAIN */
 .jumbotron {
     background-image: url('https://fumettologica.it/wp-content/uploads/2022/02/dark-crisis.jpg');
@@ -40,6 +41,19 @@ $dc-primary: #0282F9;
     }
 }
 
+/* ACTION TABLE */
+
+.action_table {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0 !important;
+
+    a {
+        margin-bottom: 0.5rem;
+    }
+}
 
 
 
@@ -94,5 +108,3 @@ $dc-primary: #0282F9;
     align-items: center;
     flex-wrap: wrap;
 }
-
-
