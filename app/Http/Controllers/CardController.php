@@ -14,6 +14,7 @@ class CardController extends Controller
      */
     public function index()
     {
+
         $cards = Card::all();
         return view('cards.index', compact('cards'));
     }
@@ -40,7 +41,7 @@ class CardController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:120',
             'description' => 'nullable',
-            'thumb' => 'required',
+            'thumb' => 'nullable',
             'price' => 'nullable',
             'series' => 'nullable',
             'sale_date' => 'nullable',

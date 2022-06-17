@@ -22,5 +22,8 @@ Route::get('/comics/create', 'CardController@create')->name('cards.create');
 Route::post('/comics', 'CardController@store')->name('cards.store');
 Route::get('/comics/{card}', 'CardController@show')->name('cards.show');
 Route::get('/comics/{card}/edit', 'CardController@edit')->name('cards.edit');
-Route::get('/comics/{card}/update', 'CardController@update')->name('cards.update');
-Route::get('/comics/{card}/destroy', 'CardController@destroy')->name('cards.destroy');
+Route::put('/comics/{card}', 'CardController@update')->name('cards.update');
+/* Route::get('/comics/{card}/destroy', 'CardController@destroy')->name('cards.destroy'); */
+
+
+Route::delete('/comics/{card}/destroy', 'CardController@destroy')->name('cards.destroy');

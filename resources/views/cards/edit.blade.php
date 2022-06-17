@@ -7,7 +7,7 @@
     <h1> Edit Comics</h1>
     @include('partials.error')
     <!-- Puntare il form alla rotta POST store -->
-    <form action="{{route('cards.index', $card->id)}}" method="post">
+    <form action="{{route('cards.update', $card->id)}}" method="post">
         @csrf
 
         <!-- Hack request -->
