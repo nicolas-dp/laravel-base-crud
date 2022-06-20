@@ -12188,6 +12188,13 @@ fieldset:disabled .btn {
   padding: 0.2rem 1rem;
 }
 
+/* INDEX */
+
+p {
+  height: 173px;
+  overflow-y: overlay;
+}
+
 /* FOOTER */
 
 .footer {
